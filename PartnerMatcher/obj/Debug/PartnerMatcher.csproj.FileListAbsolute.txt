@@ -39,3 +39,6 @@ C:\Users\Kulik\PartnerMatcher\PartnerMatcher\obj\Debug\UserWindow.baml
 C:\Users\Kulik\PartnerMatcher\PartnerMatcher\obj\Debug\PartnerMatcher.g.resources
 C:\Users\Kulik\PartnerMatcher\PartnerMatcher\obj\Debug\PartnerMatcher.Properties.Resources.resources
 C:\Users\Kulik\PartnerMatcher\PartnerMatcher\obj\Debug\PartnerMatcher.csproj.GenerateResource.Cache
+C:\Users\Maayan\Source\Repos\PartnerMatcher2\PartnerMatcher\bin\Debug\PartnerMatcher.exe.config
+C:\Users\Maayan\Source\Repos\PartnerMatcher2\PartnerMatcher\obj\Debug\PartnerMatcher.exe
+C:\Users\Maayan\Source\Repos\PartnerMatcher2\PartnerMatcher\obj\Debug\PartnerMatcher.pdb
