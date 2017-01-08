@@ -37,7 +37,6 @@ namespace PartnerMatcher
                 connection.Open();
                 getPossibleInterestAreas();
 
-
             }
             catch (Exception ex)
             {
@@ -124,10 +123,45 @@ namespace PartnerMatcher
             DataTable dt = new DataTable();
             tableAdapter.Fill(dt);
             DataRow[] rows = dt.Select();
-            dataGrid.CanUserAddRows = false;
-            dataGrid.AutoGenerateColumns = true;
-            this.dataGrid.ItemsSource = dt.AsDataView();
+            List<advertisment> ads = new List<advertisment>();
+            //Get all the relevant data for an advertisment to display
+            foreach (DataRow r in rows)
+            {
+                advertisment a = new advertisment()
+                {
+                    Id = r[0].ToString(),
+                    ManagerMail = r[1].ToString(),
+                    City = r[2].ToString(),
+                    Date = r[3].ToString(),
+                    Type = interestArea[box_interest.SelectedItem.ToString()]
+                };
+                ads.Add(a);
+            }
+            listView.ItemsSource = ads;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = sender as Button;
+            advertisment ad = button.DataContext as advertisment;
+            OleDbCommand command = new OleDbCommand("select * from Partnerships" + ad.Type + " where ID = " + ad.Id, connection);
+            OleDbDataAdapter tableAdapter = new OleDbDataAdapter(command);
+            DataTable dt = new DataTable();
+            tableAdapter.Fill(dt);
+            DataRow[] rows = dt.Select();
+            ViewPartership vp = new ViewPartership(rows[0]);
+            vp.Show();
 
         }
     }
+}
+
+public class advertisment
+{
+    public string Id { get; set; }
+    public string Date { get; set; }
+    public string City { get; set; }
+    public string ManagerMail { get; set; }
+
+    public string Type { get; set; }
 }

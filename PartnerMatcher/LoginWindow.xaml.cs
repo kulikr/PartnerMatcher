@@ -31,14 +31,14 @@ namespace PartnerMatcher
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void b_connect_Click(object sender, RoutedEventArgs e)
-        {            
+        {
             string connectionString = PartnerMatcher.Properties.Settings.Default.DBconnection;
             int counter = 0;
             OleDbConnection connection = new OleDbConnection(connectionString);
             try
             {
                 connection.Open();
-                OleDbCommand command = new OleDbCommand("select * from Users where mail ='" + tb_mail.Text + "'" + " and password ='"+tb_password.Text+"'");
+                OleDbCommand command = new OleDbCommand("select * from Users where mail ='" + tb_mail.Text + "'" + " and password ='" + tb_password.Text + "'");
                 command.Connection = connection;
                 OleDbDataReader reader = command.ExecuteReader();
                 while (reader.Read())

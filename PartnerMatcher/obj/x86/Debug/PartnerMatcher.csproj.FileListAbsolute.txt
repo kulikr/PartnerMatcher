@@ -1,44 +1,24 @@
-C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\bin\x86\Debug\PartnerMatcher.exe.config
-C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\bin\x86\Debug\PartnerMatcher.exe
-C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\bin\x86\Debug\PartnerMatcher.pdb
-C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\obj\x86\Debug\MainWindow.g.cs
-C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\obj\x86\Debug\Register_window.g.cs
-C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\obj\x86\Debug\App.g.cs
-C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\obj\x86\Debug\PartnerMatcher_MarkupCompile.cache
-C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\obj\x86\Debug\PartnerMatcher_MarkupCompile.lref
-C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\obj\x86\Debug\MainWindow.baml
-C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\obj\x86\Debug\Register_window.baml
-C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\obj\x86\Debug\PartnerMatcher.g.resources
-C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\obj\x86\Debug\PartnerMatcher.Properties.Resources.resources
-C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\obj\x86\Debug\PartnerMatcher.csproj.GenerateResource.Cache
-C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\obj\x86\Debug\PartnerMatcher.exe
-C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\obj\x86\Debug\PartnerMatcher.pdb
-C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\obj\x86\Debug\PartnerMatcher.csprojResolveAssemblyReference.cache
-C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\obj\x86\Debug\LoginWindow.g.cs
-C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\obj\x86\Debug\LoginWindow.baml
-C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\obj\x86\Debug\UserWindow.g.cs
-C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\obj\x86\Debug\UserWindow.baml
-C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\obj\x86\Debug\Search_window.g.cs
-C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\obj\x86\Debug\Search_window.baml
-C:\Users\Maayan\Desktop\PartnerMatcher\PartnerMatcher\bin\x86\Debug\PartnerMatcher.exe.config
-C:\Users\Maayan\Desktop\PartnerMatcher\PartnerMatcher\obj\x86\Debug\PartnerMatcher.exe
-C:\Users\Maayan\Desktop\PartnerMatcher\PartnerMatcher\obj\x86\Debug\PartnerMatcher.pdb
-C:\Users\Maayan\Desktop\PartnerMatcher\PartnerMatcher\bin\x86\Debug\PartnerMatcher.exe
-C:\Users\Maayan\Desktop\PartnerMatcher\PartnerMatcher\bin\x86\Debug\PartnerMatcher.pdb
-C:\Users\Maayan\Desktop\PartnerMatcher\PartnerMatcher\obj\x86\Debug\PartnerMatcher.csprojResolveAssemblyReference.cache
-C:\Users\Maayan\Desktop\PartnerMatcher\PartnerMatcher\obj\x86\Debug\LoginWindow.g.cs
-C:\Users\Maayan\Desktop\PartnerMatcher\PartnerMatcher\obj\x86\Debug\MainWindow.g.cs
-C:\Users\Maayan\Desktop\PartnerMatcher\PartnerMatcher\obj\x86\Debug\Register_window.g.cs
-C:\Users\Maayan\Desktop\PartnerMatcher\PartnerMatcher\obj\x86\Debug\Search_window.g.cs
-C:\Users\Maayan\Desktop\PartnerMatcher\PartnerMatcher\obj\x86\Debug\UserWindow.g.cs
-C:\Users\Maayan\Desktop\PartnerMatcher\PartnerMatcher\obj\x86\Debug\App.g.cs
-C:\Users\Maayan\Desktop\PartnerMatcher\PartnerMatcher\obj\x86\Debug\PartnerMatcher_MarkupCompile.cache
-C:\Users\Maayan\Desktop\PartnerMatcher\PartnerMatcher\obj\x86\Debug\PartnerMatcher_MarkupCompile.lref
-C:\Users\Maayan\Desktop\PartnerMatcher\PartnerMatcher\obj\x86\Debug\LoginWindow.baml
-C:\Users\Maayan\Desktop\PartnerMatcher\PartnerMatcher\obj\x86\Debug\MainWindow.baml
-C:\Users\Maayan\Desktop\PartnerMatcher\PartnerMatcher\obj\x86\Debug\Register_window.baml
-C:\Users\Maayan\Desktop\PartnerMatcher\PartnerMatcher\obj\x86\Debug\Search_window.baml
-C:\Users\Maayan\Desktop\PartnerMatcher\PartnerMatcher\obj\x86\Debug\UserWindow.baml
-C:\Users\Maayan\Desktop\PartnerMatcher\PartnerMatcher\obj\x86\Debug\PartnerMatcher.g.resources
-C:\Users\Maayan\Desktop\PartnerMatcher\PartnerMatcher\obj\x86\Debug\PartnerMatcher.Properties.Resources.resources
-C:\Users\Maayan\Desktop\PartnerMatcher\PartnerMatcher\obj\x86\Debug\PartnerMatcher.csproj.GenerateResource.Cache
+C:\Users\Maayan\Source\Repos\PartnerMatcher2\PartnerMatcher\bin\x86\Debug\PartnerMatcher.exe.config
+C:\Users\Maayan\Source\Repos\PartnerMatcher2\PartnerMatcher\bin\x86\Debug\PartnerMatcher.exe
+C:\Users\Maayan\Source\Repos\PartnerMatcher2\PartnerMatcher\bin\x86\Debug\PartnerMatcher.pdb
+C:\Users\Maayan\Source\Repos\PartnerMatcher2\PartnerMatcher\obj\x86\Debug\PartnerMatcher.csprojResolveAssemblyReference.cache
+C:\Users\Maayan\Source\Repos\PartnerMatcher2\PartnerMatcher\obj\x86\Debug\LoginWindow.g.cs
+C:\Users\Maayan\Source\Repos\PartnerMatcher2\PartnerMatcher\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Maayan\Source\Repos\PartnerMatcher2\PartnerMatcher\obj\x86\Debug\Register_window.g.cs
+C:\Users\Maayan\Source\Repos\PartnerMatcher2\PartnerMatcher\obj\x86\Debug\Search_window.g.cs
+C:\Users\Maayan\Source\Repos\PartnerMatcher2\PartnerMatcher\obj\x86\Debug\UserWindow.g.cs
+C:\Users\Maayan\Source\Repos\PartnerMatcher2\PartnerMatcher\obj\x86\Debug\App.g.cs
+C:\Users\Maayan\Source\Repos\PartnerMatcher2\PartnerMatcher\obj\x86\Debug\PartnerMatcher_MarkupCompile.cache
+C:\Users\Maayan\Source\Repos\PartnerMatcher2\PartnerMatcher\obj\x86\Debug\PartnerMatcher_MarkupCompile.lref
+C:\Users\Maayan\Source\Repos\PartnerMatcher2\PartnerMatcher\obj\x86\Debug\LoginWindow.baml
+C:\Users\Maayan\Source\Repos\PartnerMatcher2\PartnerMatcher\obj\x86\Debug\MainWindow.baml
+C:\Users\Maayan\Source\Repos\PartnerMatcher2\PartnerMatcher\obj\x86\Debug\Register_window.baml
+C:\Users\Maayan\Source\Repos\PartnerMatcher2\PartnerMatcher\obj\x86\Debug\Search_window.baml
+C:\Users\Maayan\Source\Repos\PartnerMatcher2\PartnerMatcher\obj\x86\Debug\UserWindow.baml
+C:\Users\Maayan\Source\Repos\PartnerMatcher2\PartnerMatcher\obj\x86\Debug\PartnerMatcher.g.resources
+C:\Users\Maayan\Source\Repos\PartnerMatcher2\PartnerMatcher\obj\x86\Debug\PartnerMatcher.Properties.Resources.resources
+C:\Users\Maayan\Source\Repos\PartnerMatcher2\PartnerMatcher\obj\x86\Debug\PartnerMatcher.csproj.GenerateResource.Cache
+C:\Users\Maayan\Source\Repos\PartnerMatcher2\PartnerMatcher\obj\x86\Debug\PartnerMatcher.exe
+C:\Users\Maayan\Source\Repos\PartnerMatcher2\PartnerMatcher\obj\x86\Debug\PartnerMatcher.pdb
+C:\Users\Maayan\Source\Repos\PartnerMatcher2\PartnerMatcher\obj\x86\Debug\ViewPartership.g.cs
+C:\Users\Maayan\Source\Repos\PartnerMatcher2\PartnerMatcher\obj\x86\Debug\ViewPartership.baml
