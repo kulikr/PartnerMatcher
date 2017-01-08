@@ -82,10 +82,13 @@
     <Compile Include="Register_window.xaml.cs">
       <DependentUpon>Register_window.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Search_window.xaml.cs" />
+    <Compile Include="Search_window.xaml.cs">
+      <DependentUpon>Search_window.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserWindow.xaml.cs">
       <DependentUpon>UserWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewPartership.xaml.cs" />
     <Page Include="LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -113,6 +116,10 @@
     <Page Include="UserWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewPartership.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>

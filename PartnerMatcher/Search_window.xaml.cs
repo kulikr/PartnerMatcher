@@ -25,9 +25,8 @@ namespace PartnerMatcher
         Dictionary<string, string> interestArea;
         public Search_window()
         {
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
-
-
 
             string connectionString = PartnerMatcher.Properties.Settings.Default.DBconnection;
             connection = new OleDbConnection(connectionString);
@@ -36,7 +35,6 @@ namespace PartnerMatcher
                 interestArea = new Dictionary<string, string>();
                 connection.Open();
                 getPossibleInterestAreas();
-
 
             }
             catch (Exception ex)
@@ -76,8 +74,6 @@ namespace PartnerMatcher
         /// <param name="e"></param>
         private void box_interestSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
-
             OleDbCommand command = new OleDbCommand("select city from Partnerships" + interestArea[box_interest.SelectedItem.ToString()], connection);
             OleDbDataAdapter tableAdapter = new OleDbDataAdapter(command);
             DataTable dt = new DataTable();
@@ -104,6 +100,7 @@ namespace PartnerMatcher
 
         private void box_location_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            listView.Visibility = Visibility.Hidden;
             if (box_location.SelectedItem != null)
             {
                 if (box_location.SelectedItem.ToString() != "")
@@ -124,10 +121,46 @@ namespace PartnerMatcher
             DataTable dt = new DataTable();
             tableAdapter.Fill(dt);
             DataRow[] rows = dt.Select();
-            dataGrid.CanUserAddRows = false;
-            dataGrid.AutoGenerateColumns = true;
-            this.dataGrid.ItemsSource = dt.AsDataView();
+            List<advertisment> ads = new List<advertisment>();
+            //Get all the relevant data for an advertisment to display
+            foreach (DataRow r in rows)
+            {
+                advertisment a = new advertisment()
+                {
+                    Id = r[0].ToString(),
+                    ManagerMail = r[1].ToString(),
+                    City = r[2].ToString(),
+                    Date = r[3].ToString(),
+                    Type = interestArea[box_interest.SelectedItem.ToString()]
+                };
+                ads.Add(a);
+            }
+            listView.ItemsSource = ads;
+            listView.Visibility = Visibility.Visible;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Button button = sender as Button;
+            advertisment ad = button.DataContext as advertisment;
+            OleDbCommand command = new OleDbCommand("select * from Partnerships" + ad.Type + " where ID = " + ad.Id, connection);
+            OleDbDataAdapter tableAdapter = new OleDbDataAdapter(command);
+            DataTable dt = new DataTable();
+            tableAdapter.Fill(dt);
+            DataRow[] rows = dt.Select();
+            ViewPartnership vp = new ViewPartnership(rows[0]);
+            vp.Show();
 
         }
     }
+}
+
+public class advertisment
+{
+    public string Id { get; set; }
+    public string Date { get; set; }
+    public string City { get; set; }
+    public string ManagerMail { get; set; }
+
+    public string Type { get; set; }
 }

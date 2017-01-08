@@ -20,10 +20,24 @@ namespace PartnerMatcher
     /// </summary>
     public partial class LoginWindow : Window
     {
+        bool flag;
         public LoginWindow()
         {
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
+            flag = false;
+            Closed += LoginWindow_Closed;
         }
+
+        private void LoginWindow_Closed(object sender, EventArgs e)
+        {
+            if (!flag)
+            {
+                MainWindow main = new MainWindow();
+                main.Show();
+            }
+        }
+
 
         /// <summary>
         /// This function defines the actions taken after the user pressed the 'connect' button
@@ -31,14 +45,14 @@ namespace PartnerMatcher
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void b_connect_Click(object sender, RoutedEventArgs e)
-        {            
+        {
             string connectionString = PartnerMatcher.Properties.Settings.Default.DBconnection;
             int counter = 0;
             OleDbConnection connection = new OleDbConnection(connectionString);
             try
             {
                 connection.Open();
-                OleDbCommand command = new OleDbCommand("select * from Users where mail ='" + tb_mail.Text + "'" + " and password ='"+tb_password.Text+"'");
+                OleDbCommand command = new OleDbCommand("select * from Users where mail ='" + tb_mail.Text + "'" + " and password ='" + tb_password.Text + "'");
                 command.Connection = connection;
                 OleDbDataReader reader = command.ExecuteReader();
                 while (reader.Read())
@@ -56,7 +70,8 @@ namespace PartnerMatcher
                 MessageBox.Show("שם המשתמש ו/או הסיסמא אינם תקינים, נסה שנית או הרשם למערכת");
             else
             {
-                UserWindow uw = new UserWindow();
+                flag = true;
+                UserWindow uw = new UserWindow(tb_mail.Text);
                 uw.Show();
                 this.Close();
             }
