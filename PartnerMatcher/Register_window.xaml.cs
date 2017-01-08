@@ -40,7 +40,7 @@ namespace PartnerMatcher
         }
 
         /// <summary>
-        /// the event when the fun button is cliked
+        /// the event when the fun button is clicked
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
