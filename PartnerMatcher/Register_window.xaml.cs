@@ -23,14 +23,20 @@ namespace PartnerMatcher
     /// </summary>
     public partial class Register_window : Window
     {
-
         /// <summary>
         /// C'tor for the Register window
         /// </summary>
         public Register_window()
         {
             InitializeComponent();
+            this.Closed += Register_window_Closed;
 
+        }
+
+        private void Register_window_Closed(object sender, EventArgs e)
+        {
+            MainWindow main = new MainWindow();
+            main.Show();
         }
 
         /// <summary>
@@ -74,8 +80,7 @@ namespace PartnerMatcher
             {
                 connection.Close();
             }
-            
-           Close();
+            Close();
         }
 
         /// <summary>

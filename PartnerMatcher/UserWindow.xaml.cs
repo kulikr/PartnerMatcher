@@ -22,6 +22,13 @@ namespace PartnerMatcher
         public UserWindow()
         {
             InitializeComponent();
+            this.Closed += UserWindow_Closed;
+        }
+
+        private void UserWindow_Closed(object sender, EventArgs e)
+        {
+            MainWindow main = new MainWindow();
+            main.Show();
         }
 
         private void search_button_Click(object sender, RoutedEventArgs e)

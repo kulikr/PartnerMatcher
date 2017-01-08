@@ -28,13 +28,16 @@ namespace PartnerMatcher
         private void button_Click(object sender, RoutedEventArgs e)
         {
             Register_window win = new Register_window();
+            this.Close();
             win.Show();
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             LoginWindow loginWindow = new LoginWindow();
+            this.Close();
             loginWindow.Show();
         }
+        
     }
 }
