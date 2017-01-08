@@ -2,19 +2,9 @@
 using System.Collections.Generic;
 using System.Data.OleDb;
 using System.Diagnostics;
-using System.Linq;
 using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace PartnerMatcher
 {
@@ -68,7 +58,7 @@ namespace PartnerMatcher
             try
             {
                 connection.Open();
-                OleDbCommand command = new OleDbCommand("Insert Into Users values ('"+tb_mail.Text+"','" + tb_password.Text + "','" + tb_firstName.Text + "','" + tb_lastName.Text + "','" + tb_birthDate.Text + "','" + tb_city.Text + "','" + tb_phone.Text + "')");
+                OleDbCommand command = new OleDbCommand("Insert Into Users values ('" + tb_mail.Text + "','" + tb_password.Text + "','" + tb_firstName.Text + "','" + tb_lastName.Text + "','" + tb_birthDate.Text + "','" + tb_city.Text + "','" + tb_phone.Text + "')");
                 command.Connection = connection;
                 command.ExecuteNonQuery();
             }
@@ -96,7 +86,7 @@ namespace PartnerMatcher
             try
             {
                 connection.Open();
-                OleDbCommand command = new OleDbCommand("select * from Users where mail ='" +mail+ "'" );
+                OleDbCommand command = new OleDbCommand("select * from Users where mail ='" + mail + "'");
                 command.Connection = connection;
                 OleDbDataReader reader = command.ExecuteReader();
                 while (reader.Read())
@@ -110,7 +100,7 @@ namespace PartnerMatcher
             {
                 connection.Close();
             }
-            return counter >0;
+            return counter > 0;
         }
 
         /// <summary>
@@ -136,7 +126,7 @@ namespace PartnerMatcher
                 email.From = fromAddress;
                 email.To.Add(tb_mail.Text);
                 email.Subject = "Welcome Message";
-                email.Body = "Hi "+tb_firstName.Text+ ",\n Welcome to PartnerMatcher! \n Your registration proccess was successfull. \n We hope you will enjoy our system. \n Regards,\n PartnerMatcher team.";
+                email.Body = "Hi " + tb_firstName.Text + ",\n Welcome to PartnerMatcher! \n Your registration proccess was successfull. \n We hope you will enjoy our system. \n Regards,\n PartnerMatcher team.";
 
                 smtp.Send(email);
 
