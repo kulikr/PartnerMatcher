@@ -1,0 +1,19 @@
+C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\bin\Debug\PartnerMatcher.exe.config
+C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\bin\Debug\PartnerMatcher.exe
+C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\bin\Debug\PartnerMatcher.pdb
+C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\obj\Debug\PartnerMatcher.csprojResolveAssemblyReference.cache
+C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\obj\Debug\MainWindow.g.cs
+C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\obj\Debug\Register_window.g.cs
+C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\obj\Debug\App.g.cs
+C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\obj\Debug\PartnerMatcher_MarkupCompile.cache
+C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\obj\Debug\PartnerMatcher_MarkupCompile.lref
+C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\obj\Debug\MainWindow.baml
+C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\obj\Debug\Register_window.baml
+C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\obj\Debug\PartnerMatcher.g.resources
+C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\obj\Debug\PartnerMatcher.Properties.Resources.resources
+C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\obj\Debug\PartnerMatcher.csproj.GenerateResource.Cache
+C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\obj\Debug\PartnerMatcher.exe
+C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher\PartnerMatcher\obj\Debug\PartnerMatcher.pdb
+C:\Users\Maayan\Desktop\PartnerMatcher\PartnerMatcher\bin\Debug\PartnerMatcher.exe.config
+C:\Users\Maayan\Desktop\PartnerMatcher\PartnerMatcher\obj\Debug\PartnerMatcher.exe
+C:\Users\Maayan\Desktop\PartnerMatcher\PartnerMatcher\obj\Debug\PartnerMatcher.pdb
