@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PartnerMatcher.myController;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
@@ -21,13 +22,14 @@ namespace PartnerMatcher
     /// </summary>
     public partial class Search_window : Window
     {
+        IController controller;
         OleDbConnection connection;
         Dictionary<string, string> interestArea;
-        public Search_window()
+        public Search_window(IController _controller)
         {
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
-
-
+            controller = _controller;
 
             string connectionString = PartnerMatcher.Properties.Settings.Default.DBconnection;
             connection = new OleDbConnection(connectionString);
@@ -75,8 +77,6 @@ namespace PartnerMatcher
         /// <param name="e"></param>
         private void box_interestSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
-
             OleDbCommand command = new OleDbCommand("select city from Partnerships" + interestArea[box_interest.SelectedItem.ToString()], connection);
             OleDbDataAdapter tableAdapter = new OleDbDataAdapter(command);
             DataTable dt = new DataTable();
@@ -103,6 +103,7 @@ namespace PartnerMatcher
 
         private void box_location_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            listView.Visibility = Visibility.Hidden;
             if (box_location.SelectedItem != null)
             {
                 if (box_location.SelectedItem.ToString() != "")
@@ -138,6 +139,7 @@ namespace PartnerMatcher
                 ads.Add(a);
             }
             listView.ItemsSource = ads;
+            listView.Visibility = Visibility.Visible;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -149,7 +151,7 @@ namespace PartnerMatcher
             DataTable dt = new DataTable();
             tableAdapter.Fill(dt);
             DataRow[] rows = dt.Select();
-            ViewPartership vp = new ViewPartership(rows[0]);
+            ViewPartnership vp = new ViewPartnership(rows[0]);
             vp.Show();
 
         }

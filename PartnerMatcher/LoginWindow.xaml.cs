@@ -1,5 +1,7 @@
-﻿using System;
+﻿using PartnerMatcher.myController;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.OleDb;
 using System.Linq;
 using System.Text;
@@ -20,10 +22,26 @@ namespace PartnerMatcher
     /// </summary>
     public partial class LoginWindow : Window
     {
-        public LoginWindow()
+        IController controller;
+        bool flag;
+        public LoginWindow(IController _controller)
         {
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
+            flag = false;
+            Closed += LoginWindow_Closed;
+            controller = _controller;
         }
+
+        private void LoginWindow_Closed(object sender, EventArgs e)
+        {
+            if (!flag)
+            {
+                MainWindow main = new MainWindow(controller);
+                main.Show();
+            }
+        }
+
 
         /// <summary>
         /// This function defines the actions taken after the user pressed the 'connect' button
@@ -33,30 +51,12 @@ namespace PartnerMatcher
         private void b_connect_Click(object sender, RoutedEventArgs e)
         {
             string connectionString = PartnerMatcher.Properties.Settings.Default.DBconnection;
-            int counter = 0;
-            OleDbConnection connection = new OleDbConnection(connectionString);
-            try
-            {
-                connection.Open();
-                OleDbCommand command = new OleDbCommand("select * from Users where mail ='" + tb_mail.Text + "'" + " and password ='" + tb_password.Text + "'");
-                command.Connection = connection;
-                OleDbDataReader reader = command.ExecuteReader();
-                while (reader.Read())
-                    counter++;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
-            if (counter == 0)
+           DataTable dt = controller.connect(tb_mail.Text, tb_password.Text);
+            if (dt==null)
                 MessageBox.Show("שם המשתמש ו/או הסיסמא אינם תקינים, נסה שנית או הרשם למערכת");
             else
             {
-                UserWindow uw = new UserWindow();
+                UserWindow uw = new UserWindow(tb_mail.Text,controller);
                 uw.Show();
                 this.Close();
             }

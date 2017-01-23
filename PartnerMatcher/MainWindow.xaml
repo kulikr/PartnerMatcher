@@ -15,12 +15,12 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Partners" FontWeight="Bold" FontSize="40" FontFamily="Snap ITC"  Margin="142,37,160.667,223.667" Grid.Row="0" />
         <TextBlock Text="Matcher" FontWeight="Bold" FontSize="60" FontFamily="Snap ITC"  Margin="103,72,111.667,175.667" Grid.Row="0" />
-        <Button x:Name="button" Content="הרשמה למערכת" HorizontalAlignment="Left" Height="53" Margin="297,173,0,0" VerticalAlignment="Top" Width="130" Click="button_Click" Background="#FFFA9034" FontWeight="Bold">
+        <Button x:Name="button" Content="הרשמה למערכת" HorizontalAlignment="Left" Height="53" Margin="297,173,0,0" VerticalAlignment="Top" Width="130" Click="register_click" Background="#FFFA9034" FontWeight="Bold">
             <Button.Effect>
                 <DropShadowEffect BlurRadius="3" Opacity="0.6"/>
             </Button.Effect>
         </Button>
-        <Button x:Name="button1" HorizontalAlignment="Left" Margin="90,173,0,0" VerticalAlignment="Top" Width="130" Click="button1_Click" Height="53" FontWeight="Bold" Background="#FFFA9034">
+        <Button x:Name="button1" HorizontalAlignment="Left" Margin="90,173,0,0" VerticalAlignment="Top" Width="130" Click="login_click" Height="53" FontWeight="Bold" Background="#FFFA9034">
             <Button.Effect>
                 <DropShadowEffect BlurRadius="3" Opacity="0.6"/>
             </Button.Effect>
