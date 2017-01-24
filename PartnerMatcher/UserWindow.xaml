@@ -24,18 +24,18 @@
         <Image x:Name="image" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="93" Source="photo/Logomakr_9P10tS.png" Margin="10,60.667,0,0" Grid.Row="4" />
         <TextBlock Text="האזור האישי" FontWeight="Bold" FontSize="32" FontFamily="Algerian"  Margin="77,14,55,39" Grid.ColumnSpan="2" Grid.Row="0" Grid.RowSpan="2" />
         <TextBlock Text="שלום" FontWeight="Bold" FontSize="16" FontFamily="Algerian"   Grid.Column="1" Grid.Row="1" Margin="83.667,15,32.333,6" />
-        <TextBlock Text="שלום" FontWeight="Bold" FontSize="16" FontFamily="Algerian"   Grid.Column="1" Grid.Row="1" Margin="31.667,15,91.333,6" />
-        <Button x:Name="button" Content="הצג פרטים אישיים" HorizontalAlignment="Left" VerticalAlignment="Top" Width="108" Margin="31.667,9,0,0" Height="41" Background="#FFFA9034" Grid.Row="2" Grid.Column="1">
+        <TextBlock x:Name="txt_firstName" TextAlignment="Right" FontWeight="Bold" FontSize="16" FontFamily="Algerian"   Grid.Column="1" Grid.Row="1" Margin="9.667,15,91.333,6" />
+        <Button x:Name="button" Content="הצג פרטים אישיים" HorizontalAlignment="Left" VerticalAlignment="Top" Width="108" Margin="31.667,9,0,0" Height="41" Background="#FFFA9034" Grid.Row="2" Grid.Column="1" Click="button_Click">
             <Button.Effect>
                 <DropShadowEffect BlurRadius="3" Opacity="0.6"/>
             </Button.Effect>
         </Button>
-        <Button x:Name="button2" Content="עדכון פרטים אישיים" HorizontalAlignment="Left" VerticalAlignment="Top" Width="108" Margin="29,9,0,0" Height="41" Background="#FFFA9034" Grid.Row="2">
+        <Button x:Name="button2" Content="עדכון פרטים אישיים" HorizontalAlignment="Left" VerticalAlignment="Top" Width="108" Margin="29,9,0,0" Height="41" Background="#FFFA9034" Grid.Row="2" Click="button2_Click">
             <Button.Effect>
                 <DropShadowEffect BlurRadius="3" Opacity="0.6"/>
             </Button.Effect>
         </Button>
-        <Button x:Name="button3" Content="הוספת פרופיל" HorizontalAlignment="Left" VerticalAlignment="Top" Width="108" Margin="31.667,9.667,0,0" Height="41" Background="#FFFA9034" Grid.Row="3" Grid.Column="1" Grid.RowSpan="2">
+        <Button x:Name="button3" Content="הוספת פרופיל" VerticalAlignment="Top" Margin="31.667,9.667,30.333,0" Height="41" Background="#FFFA9034" Grid.Row="3" Grid.Column="1" Grid.RowSpan="2" Click="button3_Click">
             <Button.Effect>
                 <DropShadowEffect BlurRadius="3" Opacity="0.6"/>
             </Button.Effect>

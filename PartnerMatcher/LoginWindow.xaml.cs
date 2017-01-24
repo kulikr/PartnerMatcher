@@ -1,5 +1,7 @@
-﻿using System;
+﻿using PartnerMatcher.myController;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.OleDb;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,17 @@ namespace PartnerMatcher
     /// </summary>
     public partial class LoginWindow : Window
     {
-        public LoginWindow()
+        IController controller;
+
+        /// <summary>
+        /// C'tor for the LoginWindow class
+        /// </summary>
+        /// <param name="_controller"></param>
+        public LoginWindow(IController _controller)
         {
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
+            controller = _controller;
         }
 
         /// <summary>
@@ -32,34 +42,21 @@ namespace PartnerMatcher
         /// <param name="e"></param>
         private void b_connect_Click(object sender, RoutedEventArgs e)
         {
-            string connectionString = PartnerMatcher.Properties.Settings.Default.DBconnection;
-            int counter = 0;
-            OleDbConnection connection = new OleDbConnection(connectionString);
-            try
-            {
-                connection.Open();
-                OleDbCommand command = new OleDbCommand("select * from Users where mail ='" + tb_mail.Text + "'" + " and password ='" + tb_password.Text + "'");
-                command.Connection = connection;
-                OleDbDataReader reader = command.ExecuteReader();
-                while (reader.Read())
-                    counter++;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                connection.Close();
-            }
-            if (counter == 0)
+           DataTable dt = controller.connect(tb_mail.Text, tb_password.Text);
+            if (dt==null)
                 MessageBox.Show("שם המשתמש ו/או הסיסמא אינם תקינים, נסה שנית או הרשם למערכת");
             else
             {
-                UserWindow uw = new UserWindow();
-                uw.Show();
-                this.Close();
+                UserWindow userWin = new UserWindow(tb_mail.Text,controller);
+                Visibility = Visibility.Hidden;
+                userWin.Closed += UserWin_Closed;
+                userWin.Show();
             }
+        }
+
+        private void UserWin_Closed(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

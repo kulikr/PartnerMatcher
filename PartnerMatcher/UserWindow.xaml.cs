@@ -1,5 +1,8 @@
-﻿using System;
+﻿using PartnerMatcher.myController;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.OleDb;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,22 +22,48 @@ namespace PartnerMatcher
     /// </summary>
     public partial class UserWindow : Window
     {
-        public UserWindow()
+        IController controller;
+        string mail;
+
+        public UserWindow(string mail, IController _controller)
         {
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
-            this.Closed += UserWindow_Closed;
+            controller = _controller;
+            this.mail = mail;
+
+            DataTable dt = controller.getFirstNameData(mail);
+            DataRow[] rows = dt.Select();
+            txt_firstName.Text = "," + rows[0]["firstName"].ToString();
         }
 
-        private void UserWindow_Closed(object sender, EventArgs e)
-        {
-            MainWindow main = new MainWindow();
-            main.Show();
-        }
 
         private void search_button_Click(object sender, RoutedEventArgs e)
         {
-            Search_window sw = new Search_window();
-            sw.Show();
+            Search_window searchWin = new Search_window(controller);
+            Visibility = Visibility.Hidden;
+            searchWin.Closed += SearchWin_Closed;
+            searchWin.Show();
+        }
+
+        private void SearchWin_Closed(object sender, EventArgs e)
+        {
+            Visibility = Visibility.Hidden;
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("אופציה זו אינה נתמכת בגירסה הנוכחית");
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("אופציה זו אינה נתמכת בגירסה הנוכחית");
+        }
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("אופציה זו אינה נתמכת בגירסה הנוכחית");
         }
     }
 }

@@ -1,17 +1,11 @@
-﻿using System;
+﻿using PartnerMatcher.myController;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace PartnerMatcher
 {
@@ -19,22 +13,41 @@ namespace PartnerMatcher
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
+
     {
-        public MainWindow()
+        IController controller;
+
+        public MainWindow(IController _controller)
         {
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
+            controller = _controller;
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void register_click(object sender, RoutedEventArgs e)
         {
-            Register_window win = new Register_window();
-            win.Show();
+            Register_window RegWin = new Register_window(controller);
+            Visibility = Visibility.Hidden;
+            RegWin.Closed += RegWin_Closed;
+            RegWin.Show();
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void RegWin_Closed(object sender, EventArgs e)
         {
-            LoginWindow loginWindow = new LoginWindow();
-            loginWindow.Show();
+            Visibility = Visibility.Visible;
+        }
+
+        private void login_click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow loginWindow = new LoginWindow(controller);
+            this.Visibility = Visibility.Hidden;
+            loginWindow.Closed += LoginWindow_Closed;
+            loginWindow.Show();        
+        }
+
+        private void LoginWindow_Closed(object sender, EventArgs e)
+        {
+            Visibility = Visibility.Visible;
         }
     }
 }
