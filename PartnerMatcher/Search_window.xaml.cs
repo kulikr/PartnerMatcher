@@ -8,12 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace PartnerMatcher
 {
@@ -24,14 +18,20 @@ namespace PartnerMatcher
     {
         IController controller;
         Dictionary<string, string> interestArea;
+        string _userMail;
 
-        public Search_window(IController _controller)
+        /// <summary>
+        /// Search window constructor
+        /// </summary>
+        /// <param name="_controller"></param>
+        /// <param name="userMail"></param>
+        public Search_window(IController _controller, string userMail)
         {
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
             controller = _controller;
             interestArea = new Dictionary<string, string>();
-
+            _userMail = userMail;
             getPossibleInterestAreas();
 
         }
@@ -45,7 +45,7 @@ namespace PartnerMatcher
             DataTable dt = controller.getAreas();
 
             DataRow[] rows = dt.Select();
-            HashSet<string> areas = new HashSet<string>();
+            List<string> areas = new List<string>();
             foreach (DataRow dr in rows)
             {
                 areas.Add(dr[1].ToString());
@@ -63,8 +63,8 @@ namespace PartnerMatcher
         {
             string type = interestArea[box_interest.SelectedItem.ToString()];
 
-            DataTable dt = controller.getCitiesParnterShips(type);
-          
+            DataTable dt = controller.getCitiesPartnerShips(type);
+
             DataRow[] rows = dt.Select();
             if (rows.Length == 0)
             {
@@ -85,6 +85,11 @@ namespace PartnerMatcher
             box_location.ItemsSource = locations;
         }
 
+        /// <summary>
+        /// Displays the location combobox after the user selects interest area
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void box_location_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             listView.Visibility = Visibility.Hidden;
@@ -101,6 +106,11 @@ namespace PartnerMatcher
                 b_showResults.Visibility = Visibility.Hidden;
         }
 
+        /// <summary>
+        /// displays search results button was clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void b_showResults_Click(object sender, RoutedEventArgs e)
         {
             string type = interestArea[box_interest.SelectedItem.ToString()];
@@ -114,34 +124,45 @@ namespace PartnerMatcher
             //Get all the relevant data for an advertisment to display
             foreach (DataRow r in rows)
             {
-                advertisment a = new advertisment()
+                if (r[3] != null && r[3].ToString() != string.Empty)
                 {
-                    Id = r[0].ToString(),
-                    ManagerMail = r[1].ToString(),
-                    City = r[2].ToString(),
-                    Date = r[3].ToString(),
-                    Type = interestArea[box_interest.SelectedItem.ToString()]
-                };
-                ads.Add(a);
+                    advertisment a = new advertisment()
+                    {
+                        Id = r[0].ToString(),
+                        ManagerMail = r[1].ToString(),
+                        City = r[2].ToString(),
+                        Date = r[3].ToString(),
+                        Type = interestArea[box_interest.SelectedItem.ToString()]
+                    };
+                    ads.Add(a);
+                }
             }
             listView.ItemsSource = ads;
             listView.Visibility = Visibility.Visible;
         }
 
+        /// <summary>
+        /// display partnership details button in the ads list was clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Button button = sender as Button;
             advertisment ad = button.DataContext as advertisment;
 
-            DataTable dt = controller.getAadvertisments(ad.Type, ad.Id);
+            DataTable dt = controller.getAdvertisments(ad.Type, ad.Id);
 
             DataRow[] rows = dt.Select();
-            ViewPartnership vp = new ViewPartnership(rows[0]);
+            ViewPartnership vp = new ViewPartnership(ref controller, rows[0], ad.Id, _userMail, ad.Type, ad.ManagerMail, true, "-1");
             vp.Show();
         }
     }
 }
 
+/// <summary>
+/// This class represents an advertisment
+/// </summary>
 public class advertisment
 {
     public string Id { get; set; }

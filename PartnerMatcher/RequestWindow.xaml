@@ -1,0 +1,28 @@
+﻿<Window x:Class="PartnerMatcher.RequestWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PartnerMatcher"
+        mc:Ignorable="d"
+        Title="RequestWindow" Height="250" Width="200" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+
+    <Window.Background>
+        <ImageBrush ImageSource="photo/background.jpg" Stretch="UniformToFill"/>
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="הכנס הערות למקבלי הבקשה" FontWeight="Bold" HorizontalAlignment="Center"  Grid.ColumnSpan="3" VerticalAlignment="Center"></TextBlock>
+        <TextBox Name="request_text" Grid.Row="1" Grid.Column="1" ></TextBox>
+        <Button Name="launch_request"  Content="שגר בקשה" Height="30" Width="90" Grid.Row="2" Grid.Column="1" Click="launch_request_Click"></Button>
+    </Grid>
+</Window>

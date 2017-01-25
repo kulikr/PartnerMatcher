@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using PartnerMatcher.myController;
+using PartnerMatcher.myModel;
 
 namespace PartnerMatcher
 {
@@ -14,10 +15,18 @@ namespace PartnerMatcher
     /// </summary>
     public partial class App : Application
     {
+        /// <summary>
+        /// On startup function that opens when the project starts
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnStartup(StartupEventArgs e)
         {
-            MainWindow main = new MainWindow(new Controller());
-            main.Show();
+            IController controller = new Controller();
+            IModel model = new Model(controller);
+            MainWindow view = new MainWindow(ref controller);
+            controller.setModel(model);
+            controller.setView(view);
+            view.Show();
         }
     }
 

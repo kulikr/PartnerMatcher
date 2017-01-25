@@ -23,14 +23,7 @@ namespace PartnerMatcher
         {
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             InitializeComponent();
-            Closed += Register_window_Closed;
             controller = _controller;
-        }
-
-        private void Register_window_Closed(object sender, EventArgs e)
-        {
-            //MainWindow main = new MainWindow(controller);
-            //main.Show();
         }
 
         /// <summary>
@@ -59,7 +52,13 @@ namespace PartnerMatcher
                 MessageBox.Show("המייל שהוזן אינו תקין! הזן מייל תקין");
                 return;
             }
-            controller.createNewUser(tb_mail.Text, tb_password.Text, tb_firstName.Text, tb_lastName.Text, tb_birthDate.Text, tb_city.Text, tb_phone.Text);
+            if (controller.createNewUser(tb_mail.Text, tb_password.Text, tb_firstName.Text, tb_lastName.Text, tb_birthDate.Text, tb_city.Text, tb_phone.Text))
+            {
+                MessageBox.Show("המשתמש הוסף בהצלחה!");
+                Close();
+            }
+            else
+                MessageBox.Show("משהו השתבש, אנא נסה שנית");
         }
 
         /// <summary>
@@ -85,8 +84,6 @@ namespace PartnerMatcher
                 return false;
             }
             return true;
-            //************************************************************************************************
-            //need to check if the mail is valid and if the phone is valid 
         }
 
         /// <summary>

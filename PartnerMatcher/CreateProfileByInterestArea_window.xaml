@@ -1,0 +1,30 @@
+﻿<Window x:Class="PartnerMatcher.CreateProfileByInterestArea_window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CreateProfile_window" Height="320" Width="305" WindowStartupLocation="CenterScreen">
+    <Window.Background>
+        <ImageBrush ImageSource="photo/background.jpg" Stretch="UniformToFill"/>
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="169.5*"/>
+            <ColumnDefinition Width="169.5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="58*"/>
+            <RowDefinition Height="42*"/>
+            <RowDefinition Height="63*"/>
+            <RowDefinition Height="46*"/>
+            <RowDefinition Height="95*"/>
+        </Grid.RowDefinitions>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="93" Source="photo/Logomakr_9P10tS.png" Margin="111,54,0,0" Grid.Row="4" Grid.ColumnSpan="2" />
+        <TextBlock Text="יצירת פרופיל שותפות" FontWeight="Bold" FontSize="16" FontFamily="Algerian"  Margin="70,6,66,29" Grid.ColumnSpan="2" Grid.Row="0" />
+        <TextBlock FontWeight="Bold" FontSize="13" FontFamily="Algerian"  Margin="66,31,10,0" Grid.Column="1" ><Run Text=":בחר תחום"/></TextBlock>
+        <ListBox x:Name="lb_interestArea" HorizontalAlignment="Left" Height="158" Grid.RowSpan="4" VerticalAlignment="Top" Width="181" Margin="23,31,0,0" Grid.ColumnSpan="2"/>
+        <Button x:Name="b_confirm" Content="אשר" VerticalAlignment="Top" Margin="104,18,89,0" Height="19" Background="#FFFA9034" Grid.Row="4" Click="b_confirm_Click" Grid.ColumnSpan="2">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="3" Opacity="0.6"/>
+            </Button.Effect>
+        </Button>
+    </Grid>
+</Window>

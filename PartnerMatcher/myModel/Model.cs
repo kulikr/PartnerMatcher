@@ -14,7 +14,7 @@ namespace PartnerMatcher.myModel
     /// <summary>
     /// This class represents our partner matcher project model
     /// </summary>
-    public class Model :IModel
+    public class Model : IModel
     {
         IController controller;
 
@@ -50,7 +50,7 @@ namespace PartnerMatcher.myModel
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message);
+                controller.Output("משהו השתבש.."+e.Message);
             }
             finally
             {
@@ -68,17 +68,17 @@ namespace PartnerMatcher.myModel
         {
             string connectionString = PartnerMatcher.Properties.Settings.Default.DBconnection;
             OleDbConnection connection = new OleDbConnection(connectionString);
-            int numOfAffected=0;
+            int numOfAffected = 0;
             try
             {
                 connection.Open();
                 OleDbCommand command = new OleDbCommand(_command);
                 command.Connection = connection;
-                numOfAffected=command.ExecuteNonQuery();
+                numOfAffected = command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                controller.Output("משהו השתבש..." + ex.Message);
             }
             finally
             {
@@ -90,6 +90,12 @@ namespace PartnerMatcher.myModel
                 return false;
         }
 
+        /// <summary>
+        /// Sends a confirmation mail to the specific mail
+        /// </summary>
+        /// <param name="mail">The mail to send to</param>
+        /// <param name="firstName">The name of the user</param>
+        /// <returns>True if succeeded otherwise false</returns>
         public bool sendConfirmationMail(string mail, string firstName)
         {
             try
@@ -117,10 +123,11 @@ namespace PartnerMatcher.myModel
             }
             catch (Exception)
             {
-             
+
                 return false;
             }
             return true;
         }
+
     }
 }

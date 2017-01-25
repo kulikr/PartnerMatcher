@@ -1,0 +1,68 @@
+﻿<Window x:Class="PartnerMatcher.Register_window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PartnerMatcher"
+        mc:Ignorable="d"
+        Title="Register_window" Height="500" Width="300" ResizeMode="NoResize">
+    <Window.Background>
+        <ImageBrush ImageSource="photo/background.jpg"/>
+    </Window.Background>
+    <Grid Margin="0,0,0.333,-4.667">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="205*"/>
+            <ColumnDefinition Width="88*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="42*"/>
+            <RowDefinition Height="37*"/>
+            <RowDefinition Height="37*"/>
+            <RowDefinition Height="37*"/>
+            <RowDefinition Height="37*"/>
+            <RowDefinition Height="37*"/>
+            <RowDefinition Height="37*"/>
+            <RowDefinition Height="37*"/>
+            <RowDefinition Height="37*"/>
+            <RowDefinition Height="37*"/>
+
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="txt_headLine" Grid.ColumnSpan="2" HorizontalAlignment="Center" Height="32" Margin="72,10,71.667,0" TextWrapping="Wrap" Text=" הרשמה למערכת" VerticalAlignment="Top" Width="151" FontFamily="Guttman Aharoni" FontWeight="Bold" FontSize="18" TextDecorations="{x:Null}"/>
+
+        <TextBlock x:Name="txt_mail" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="9.667,10,0,0" Grid.Row="1" TextWrapping="Wrap" Text="אי-מייל" VerticalAlignment="Top" Width="78" FontFamily="Guttman-Aharoni" FontWeight="Bold" TextDecorations="{x:Null}"/>
+        <TextBox x:Name="tb_mail" HorizontalAlignment="Left" Height="27" Margin="40,5,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>
+
+        <TextBlock x:Name="txt_password" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="10.667,10,-0.667,0" Grid.Row="2" TextWrapping="Wrap" Text="סיסמה" VerticalAlignment="Top" Width="78" FontFamily="Guttman-Aharoni" FontWeight="Bold" TextDecorations="{x:Null}"/>
+        <TextBox x:Name="tb_password" HorizontalAlignment="Left" Height="27" Margin="40,5,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>
+
+        <TextBlock x:Name="txt_firstName" Grid.Column="1" HorizontalAlignment="Left" Height="22" Margin="10.667,9.667,-0.667,0" Grid.Row="3" TextWrapping="Wrap" Text="שם פרטי" VerticalAlignment="Top" Width="78" FontFamily="Guttman-Aharoni" FontWeight="Bold" TextDecorations="{x:Null}"/>
+        <TextBox x:Name="tb_firstName" HorizontalAlignment="Left" Height="27" Margin="40,4.667,0,0" Grid.Row="3" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>
+
+        <TextBlock x:Name="txt_lastName" Grid.Column="1" HorizontalAlignment="Left" Margin="9.667,11,0,0" Grid.Row="4" TextWrapping="Wrap" Text="שם משפחה" Width="78" FontFamily="Guttman-Aharoni" FontWeight="Bold" TextDecorations="{x:Null}" Height="24" VerticalAlignment="Top"/>
+        <TextBox x:Name="tb_lastName" HorizontalAlignment="Left" Height="27" Margin="40,5.667,0,0" Grid.Row="4" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="42" VerticalAlignment="Top" Width="95" Source="photo/Logomakr_9P10tS.png" Margin="6,6.667,0,-1.333" Grid.Row="9" />
+        <TextBlock x:Name="txt_birthDate" Grid.Column="1" HorizontalAlignment="Left" Margin="10.667,10,-0.667,0" Grid.Row="5" TextWrapping="Wrap" Text="תאריך לידה" Width="78" FontFamily="Guttman-Aharoni" FontWeight="Bold" TextDecorations="{x:Null}"/>
+        <DatePicker x:Name="tb_birthDate" HorizontalAlignment="Left" Height="31" Margin="40,0,0,4" Grid.Row="5" VerticalAlignment="Bottom" Width="155">
+            <DatePicker.Resources>
+                <Style TargetType="DatePickerTextBox">
+                    <Setter Property="IsReadOnly" Value="True"/>
+                </Style>
+            </DatePicker.Resources>
+        </DatePicker>
+
+        <TextBlock x:Name="txt_city" Grid.Column="1" HorizontalAlignment="Left" Margin="9.667,10,0,2.667" Grid.Row="6" TextWrapping="Wrap" Text="יישוב" Width="78" FontFamily="Guttman-Aharoni" FontWeight="Bold" TextDecorations="{x:Null}"/>
+        <TextBox x:Name="tb_city" HorizontalAlignment="Left" Height="27" Margin="40,8,0,0" Grid.Row="6" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155" Grid.RowSpan="2"/>
+
+        <TextBlock x:Name="txt_phone" Grid.Column="1" HorizontalAlignment="Left" Margin="9.667,10.333,0,2" Grid.Row="7" TextWrapping="Wrap" Text="מספר טלפון" Width="78" FontFamily="Guttman-Aharoni" FontWeight="Bold" TextDecorations="{x:Null}"/>
+        <TextBox x:Name="tb_phone" HorizontalAlignment="Left" Height="27" Margin="40,9.667,0,0" Grid.Row="7" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>
+        <Button x:Name="b_fin" Content="סיום" HorizontalAlignment="Left" Height="21" Margin="116,0.667,0,0" Grid.Row="9" VerticalAlignment="Top" Width="62" FontFamily="Guttman-Aharoni" FontWeight="Bold" Click="b_fin_Click"/>
+        <CheckBox x:Name="cb_regelations" Content="" HorizontalAlignment="Left" Height="18" Margin="10,10.333,0,0" Grid.Row="8" VerticalAlignment="Top" Width="15" Grid.Column="1"/>
+        <TextBlock x:Name="txt_regelations" HorizontalAlignment="Left" Height="18" Margin="100,10.333,0,0" Grid.Row="8" TextWrapping="Wrap" Text="אני מאשר כי קראתי את " VerticalAlignment="Top" Width="116" FontSize="10" FontFamily="Guttman-Aharoni" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="19" Margin="159,42,0,0" TextWrapping="Wrap" Text="יש למלא את כל השדות*" VerticalAlignment="Top" Width="135" FontSize="10" FontFamily="Guttman-Aharoni" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="regelations"  HorizontalAlignment="Left" Margin="67,0,0,18.333" Grid.Row="8" VerticalAlignment="Bottom" FontFamily="Guttman-Aharoni" FontWeight="Bold" Foreground="#FF0066F1" Cursor="Hand" FontSize="10" Height="18" RenderTransformOrigin="1.973,0.264" >
+         <Hyperlink NavigateUri="http://www.yad2.co.il/Takanon.php" RequestNavigate="Hyperlink_RequestNavigate">
+            התקנון  
+         </Hyperlink>
+        </TextBlock>
+    </Grid>
+</Window>

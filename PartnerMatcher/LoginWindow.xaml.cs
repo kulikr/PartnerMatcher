@@ -54,6 +54,11 @@ namespace PartnerMatcher
             }
         }
 
+        /// <summary>
+        /// Ctach the event for when the user window was closed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UserWin_Closed(object sender, EventArgs e)
         {
             Close();

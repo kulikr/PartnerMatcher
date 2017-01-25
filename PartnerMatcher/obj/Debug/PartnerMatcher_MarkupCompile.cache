@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher2\PartnerMatcher\obj\Debug\
+D:\maayan\PartnerMatcher\PartnerMatcher\obj\Debug\
 PartnerMatcher
 none
 false
 DEBUG;TRACE
-C:\Users\ben\Desktop\לימודים\סמסטר ה\ניתוצ\מטלה 3\PartnerMatcher2\PartnerMatcher\App.xaml
-6-1393874889
+D:\maayan\PartnerMatcher\PartnerMatcher\App.xaml
+15224317203
 
-10102278468
-13738642453
-LoginWindow.xaml;MainWindow.xaml;Register_window.xaml;Search_window.xaml;UserWindow.xaml;ViewPartership.xaml;
+241119705163
+13-1142990016
+AddAppartmentsProfile.xaml;AddDatesProfile.xaml;AddPartnershipWindow.xaml;AddSportsProfile.xaml;AddTripsProfile.xaml;ChooseProfileWindow.xaml;CreateProfileByInterestArea_window.xaml;LoginWindow.xaml;MainWindow.xaml;PartnershipWindow.xaml;Register_window.xaml;RequestWindow.xaml;Search_window.xaml;UserWindow.xaml;ViewPartnership.xaml;
 
 False
 
